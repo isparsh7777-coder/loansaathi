@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 16px;
+  }
+  h1 {
+    @apply text-3xl font-semibold leading-tight tracking-tight text-ink;
+  }
+  h2 {
+    @apply text-2xl font-semibold leading-tight text-ink;
+  }
+  h3 {
+    @apply text-lg font-semibold text-ink;
+  }
+  a {
+    @apply underline-offset-2;
+  }
+  /* Visible keyboard focus everywhere — important for accessibility target */
+  :focus-visible {
+    outline: 3px solid #14213D;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* The one reserved action color on the whole site */
+  .btn-primary {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-pill bg-marigold
+      px-6 py-4 text-lg font-semibold text-ink shadow-card transition-colors
+      hover:bg-marigold-600 active:bg-marigold-700 disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-pill border-2 border-ink
+      bg-transparent px-6 py-4 text-lg font-semibold text-ink transition-colors hover:bg-ink-100;
+  }
+  .card {
+    @apply rounded-card border border-line bg-white p-5 shadow-card;
+  }
+  .container-mobile {
+    @apply mx-auto w-full max-w-mobile px-4;
+  }
+}
