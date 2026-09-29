@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import IntroSplash from "@/components/IntroSplash";
+import { Analytics } from "@vercel/analytics/next";
 
 const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
         <main className="min-h-screen pb-24 sm:pb-0">{children}</main>
         <Footer />
         <BottomNav />
+        <Analytics />
       </body>
     </html>
   );
